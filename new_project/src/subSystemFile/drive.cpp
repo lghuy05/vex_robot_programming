@@ -3,17 +3,15 @@
 #include "main.h"
 #include "pros/misc.h"
 
-// void setDriveMotor(int left, int right) {
-//   leftFront.move(left);
-//   leftBack.move(left);
-//   rightFront.move(right);
-//   rightBack.move(right);
-// }
+void setDriveMotor(int left, int right) {
+  leftDrive.move(left);
+  rightDrive.move(right);
+}
 
 void setDrive() {
   // tank control mechanism
-  // int left = master.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
   // int right = master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+  // int left = master.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
   // setDriveMotor(left, right);
 
   // arcade control mechanism

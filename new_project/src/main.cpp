@@ -30,6 +30,7 @@ void initialize() {
   pros::lcd::set_text(1, "Hello PROS User!");
 
   pros::lcd::register_btn1_cb(on_center_button);
+  leftDrive.set_reversed(true);
 }
 
 /**
@@ -78,9 +79,6 @@ void autonomous() { goSquare(); }
  */
 void opcontrol() {
   while (true) {
-    if (master.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
-      autonomous();
-    }
 
     setDrive();
     pros::delay(20);
