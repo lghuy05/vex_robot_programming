@@ -1,5 +1,6 @@
 #pragma once
 #include "main.h"
+#include "pros/imu.hpp"
 
 // 4 motors
 // extern pros::Motor leftFront;
@@ -11,3 +12,4 @@
 extern pros::MotorGroup leftDrive;
 extern pros::MotorGroup rightDrive;
 extern pros::Controller master;
+extern pros::Imu imu;

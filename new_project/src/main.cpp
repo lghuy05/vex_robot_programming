@@ -27,10 +27,17 @@ void on_center_button() {
  */
 void initialize() {
   pros::lcd::initialize();
-  pros::lcd::set_text(1, "Hello PROS User!");
+  pros::lcd::set_text(1, "Yui is a goat");
 
   pros::lcd::register_btn1_cb(on_center_button);
   leftDrive.set_reversed(true);
+  // Initialize IMU
+  imu.reset();       // Reset to 0 degrees
+  pros::delay(2000); // Wait for calibration
+  while (imu.is_calibrating()) {
+    pros::delay(10);
+  }
+  pros::lcd::set_text(2, "IMU Ready!");
 }
 
 /**
@@ -62,7 +69,7 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() { goSquare(); }
+void autonomous() {}
 
 /**
  * Runs the operator control code. This function will be started in its own task
@@ -79,8 +86,8 @@ void autonomous() { goSquare(); }
  */
 void opcontrol() {
   while (true) {
-
-    setDrive();
-    pros::delay(20);
+    // setDrive();
+    setDrivewithsensor();
+    pros::delay(50); // Update 20 times per second
   }
 }
