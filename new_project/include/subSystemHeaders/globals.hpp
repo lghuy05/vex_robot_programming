@@ -13,3 +13,4 @@ extern pros::MotorGroup leftDrive;
 extern pros::MotorGroup rightDrive;
 extern pros::Controller master;
 extern pros::Imu imu;
+extern pros::Motor intake_motor;

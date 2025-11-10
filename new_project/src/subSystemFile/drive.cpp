@@ -8,6 +8,7 @@ void setDriveMotor(int left, int right) {
   rightDrive.move(right);
 }
 
+
 void setDrive() {
   // tank control mechanism
   // int right = master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);

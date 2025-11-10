@@ -86,8 +86,22 @@ void autonomous() {}
  */
 void opcontrol() {
   while (true) {
-    // setDrive();
+    int INTAKE_SPEED = 80; // Increased from 20
+    
+    bool intake = master.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
+    bool purge = master.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
+
+    if (purge) {
+      intake_motor.move(-INTAKE_SPEED); // Reverse while R2 held
+    } 
+    else if (intake) {
+      intake_motor.move(INTAKE_SPEED);  // Forward while R1 held
+    }
+    else {
+      intake_motor.move(0);             // Stop when no buttons pressed
+    }
+
     setDrivewithsensor();
-    pros::delay(50); // Update 20 times per second
+    pros::delay(50);
   }
 }
