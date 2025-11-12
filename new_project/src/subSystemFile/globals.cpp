@@ -12,7 +12,6 @@
 //
 // 6 motors
 pros::MotorGroup leftDrive({-4, -5, 6}, pros::v5::MotorGear::blue); //-4,-5,6
-//
 pros::MotorGroup rightDrive({-1, 2, 3}, pros::v5::MotorGear::blue); //-1,2,3
 // pros::MotorGroup leftDrive({7, 8});
 // pros::MotorGroup rightDrive({5, 6});

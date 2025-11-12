@@ -8,7 +8,6 @@ void setDriveMotor(int left, int right) {
   rightDrive.move(right);
 }
 
-
 void setDrive() {
   // tank control mechanism
   // int right = master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
@@ -26,7 +25,7 @@ void setDrivewithsensor() {
   // Arcade control
   int power = master.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
   int turn = master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
-  const double speed_counter = 0.4;
+  const double speed_counter = 1.0;
   power = power * speed_counter;
 
   turn = turn * speed_counter;
