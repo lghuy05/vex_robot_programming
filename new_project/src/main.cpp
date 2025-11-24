@@ -69,7 +69,7 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() { myAutonomous(); }
 
 /**
  * Runs the operator control code. This function will be started in its own task
@@ -87,18 +87,20 @@ void autonomous() {}
 void opcontrol() {
   while (true) {
     int INTAKE_SPEED = 80; // Increased from 20
-    
+
     bool intake = master.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
     bool purge = master.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
+    bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
 
+    if (auto_run) {
+      autonomous();
+    }
     if (purge) {
       intake_motor.move(-INTAKE_SPEED); // Reverse while R2 held
-    } 
-    else if (intake) {
-      intake_motor.move(INTAKE_SPEED);  // Forward while R1 held
-    }
-    else {
-      intake_motor.move(0);             // Stop when no buttons pressed
+    } else if (intake) {
+      intake_motor.move(INTAKE_SPEED); // Forward while R1 held
+    } else {
+      intake_motor.move(0); // Stop when no buttons pressed
     }
 
     setDrivewithsensor();
