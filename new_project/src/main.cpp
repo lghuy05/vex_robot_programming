@@ -27,7 +27,7 @@ void on_center_button() {
  */
 void initialize() {
   pros::lcd::initialize();
-  pros::lcd::set_text(1, "Yui is a goat");
+  pros::lcd::set_text(1, "Yui is the goat");
 
   pros::lcd::register_btn1_cb(on_center_button);
   leftDrive.set_reversed(true);
@@ -90,17 +90,20 @@ void opcontrol() {
 
     bool intake = master.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
     bool purge = master.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
-    bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
+    // bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
 
-    if (auto_run) {
-      autonomous();
-    }
+    // if (auto_run) {
+    //   autonomous();
+    // }
     if (purge) {
       intake_motor.move(-INTAKE_SPEED); // Reverse while R2 held
+      intake_motor2.move(-INTAKE_SPEED);
     } else if (intake) {
       intake_motor.move(INTAKE_SPEED); // Forward while R1 held
+      intake_motor2.move(INTAKE_SPEED);
     } else {
       intake_motor.move(0); // Stop when no buttons pressed
+      intake_motor2.move(0);
     }
 
     setDrivewithsensor();
