@@ -15,3 +15,4 @@ extern pros::Controller master;
 extern pros::Imu imu;
 extern pros::Motor intake_motor;
 extern pros::Motor intake_motor2;
+extern pros::Motor intake_motor3;

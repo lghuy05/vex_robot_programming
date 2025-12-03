@@ -1,3 +1,4 @@
+#include "subSystemHeaders/globals.hpp"
 #include "main.h"
 #include "pros/abstract_motor.hpp"
 #include "pros/misc.h"
@@ -18,6 +19,7 @@ pros::MotorGroup rightDrive({-1, 2, 3}, pros::v5::MotorGear::blue); //-1,2,3
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 pros::Motor intake_motor(8, pros::v5::MotorGear::blue);
 pros::Motor intake_motor2(-9, pros::v5::MotorGear::blue);
+pros::Motor intake_motor3(10, pros::v5::MotorGear::blue);
 pros::Imu imu(7);
 
 // blue set
