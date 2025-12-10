@@ -86,12 +86,12 @@ void autonomous() { myAutonomous(); }
  */
 void opcontrol() {
   while (true) {
-    int INTAKE_SPEED = 80; // Increased from 20
+    int INTAKE_SPEED = 100; // Increased from 20
 
     bool intake = master.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
     bool purge = master.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
-    bool intake_2 = master.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
-    bool purge_2 = master.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
+    // bool intake_2 = master.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
+    // bool purge_2 = master.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
 
     bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
 
@@ -101,21 +101,14 @@ void opcontrol() {
     if (purge) {
       intake_motor.move(-INTAKE_SPEED); // Reverse while R2 held
       intake_motor2.move(-INTAKE_SPEED);
+      intake_motor3.move(INTAKE_SPEED);
     } else if (intake) {
       intake_motor.move(INTAKE_SPEED); // Forward while R1 held
       intake_motor2.move(INTAKE_SPEED);
+      intake_motor3.move(-INTAKE_SPEED);
     } else {
       intake_motor.move(0); // Stop when no buttons pressed
       intake_motor2.move(0);
-    }
-
-    if (purge_2) {
-      intake_motor3.move(INTAKE_SPEED);
-    } else if (intake_2) {
-
-      intake_motor3.move(-INTAKE_SPEED);
-    } else {
-
       intake_motor3.move(0);
     }
 
