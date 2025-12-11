@@ -3,6 +3,7 @@
 #include "../include/subSystemHeaders/drive.hpp"
 #include "../include/subSystemHeaders/globals.hpp"
 #include "pros/misc.h"
+#include "pros/rtos.hpp"
 /**
  * A callback function for LLEMU's center button.
  *
@@ -112,7 +113,7 @@ void opcontrol() {
       intake_motor3.move(0);
     }
 
-    setDrivewithsensor();
+    setDrive();
     pros::delay(50);
   }
 }
