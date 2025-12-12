@@ -1,5 +1,6 @@
 #pragma once
 #include "main.h"
+#include "pros/adi.hpp"
 #include "pros/imu.hpp"
 
 // 4 motors
@@ -16,3 +17,5 @@ extern pros::Imu imu;
 extern pros::Motor intake_motor;
 extern pros::Motor intake_motor2;
 extern pros::Motor intake_motor3;
+extern pros::adi::DigitalOut piston;
+extern bool pistonState;

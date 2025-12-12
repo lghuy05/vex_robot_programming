@@ -1,6 +1,7 @@
 #include "subSystemHeaders/globals.hpp"
 #include "main.h"
 #include "pros/abstract_motor.hpp"
+#include "pros/adi.hpp"
 #include "pros/misc.h"
 #include "pros/motor_group.hpp"
 #include "pros/motors.h"
@@ -21,6 +22,8 @@ pros::Motor intake_motor(8, pros::v5::MotorGear::blue);
 pros::Motor intake_motor2(-9, pros::v5::MotorGear::blue);
 pros::Motor intake_motor3(10, pros::v5::MotorGear::blue);
 pros::Imu imu(7);
+pros::adi::DigitalOut piston('H');
+bool pistonState = false;
 
 // blue set
 // pros::MotorGroup bluemotors({1, 2}, pros::E_MOTOR_GEAR_BLUE);
