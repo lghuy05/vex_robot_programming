@@ -17,5 +17,4 @@ extern pros::Imu imu;
 extern pros::Motor intake_motor;
 extern pros::Motor intake_motor2;
 extern pros::Motor intake_motor3;
-extern pros::adi::DigitalOut piston;
-extern bool pistonState;
+extern pros::adi::Pneumatics piston;

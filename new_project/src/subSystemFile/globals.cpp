@@ -22,8 +22,7 @@ pros::Motor intake_motor(8, pros::v5::MotorGear::blue);
 pros::Motor intake_motor2(-9, pros::v5::MotorGear::blue);
 pros::Motor intake_motor3(10, pros::v5::MotorGear::blue);
 pros::Imu imu(7);
-pros::adi::DigitalOut piston('H');
-bool pistonState = false;
+pros::adi::Pneumatics piston('H');
 
 // blue set
 // pros::MotorGroup bluemotors({1, 2}, pros::E_MOTOR_GEAR_BLUE);

@@ -95,13 +95,9 @@ void opcontrol() {
     // bool purge_2 = master.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
 
     bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
-    bool togglePiston = master.get_digital(pros::E_CONTROLLER_DIGITAL_X);
-    static bool lastXPressed = false;
-    if (togglePiston && !lastXPressed) {
-      pistonState = !pistonState;    // Toggle the state
-      piston.set_value(pistonState); // Set piston to new state
+    if (master.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+      piston.toggle(); // Much simpler!
     }
-    lastXPressed = togglePiston; // Update last button state
     if (auto_run) {
       myAutonomous();
     }
