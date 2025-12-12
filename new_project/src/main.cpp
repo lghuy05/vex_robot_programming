@@ -117,4 +117,4 @@ void opcontrol() {
     pros::delay(50);
   }
 }
-// eun is noob
+// eun is Korean
