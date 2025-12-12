@@ -115,7 +115,6 @@ void opcontrol() {
 
     setDrive();
     pros::delay(50);
-    eunissdafsd();
   }
 }
-// we are setting up our github
+// eun is noob
