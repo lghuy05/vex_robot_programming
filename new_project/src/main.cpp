@@ -96,7 +96,10 @@ void opcontrol() {
 
     bool auto_run = master.get_digital(pros::E_CONTROLLER_DIGITAL_A);
     if (master.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-      piston.toggle(); // Much simpler!
+      piston1.toggle(); // Much simpler!
+    }
+    if (master.get_digital(pros::E_CONTROLLER_DIGITAL_Y)) {
+      piston2.toggle();
     }
     if (auto_run) {
       myAutonomous();
