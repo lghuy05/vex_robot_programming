@@ -98,7 +98,7 @@ void opcontrol() {
     if (master.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
       piston1.toggle(); // Much simpler!
     }
-    if (master.get_digital(pros::E_CONTROLLER_DIGITAL_Y)) {
+    if (master.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_Y)) {
       piston2.toggle();
     }
     if (auto_run) {
