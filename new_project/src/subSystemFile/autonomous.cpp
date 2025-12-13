@@ -354,32 +354,33 @@ void togglePiston() { piston1.toggle(); }
 // Add this to the END of autonomous.cpp
 void myAutonomous() {
   timedTurn(-26, 882);
-  timedDrive(33, 3500);
+  timedDrive(33, 3700);
   timedTurn(30, 1600);
-  pros::delay(500);
-  leftDrive.move(20);
-  rightDrive.move(20);
-  pros::delay(1400);
-  leftDrive.move(20);
-  rightDrive.move(20);
-  intake_motor.move(-100);
-  intake_motor2.move(-100);
-  pros::delay(2000);
 
-  leftDrive.move(0);
-  rightDrive.move(0);
-  intake_motor.move(0);
-  intake_motor2.move(0);
-  timedTurn(25, 500);
-  timedDrive(30, 2000);
-  timedTurn(-30, 1400);
-  togglePiston();
-  intake_motor.move(-100);
-  intake_motor2.move(-100);
-  intake_motor3.move(100);
-  pros::delay(3000);
-  piston1.set_value(false);
-
+  // pros::delay(500);
+  // leftDrive.move(20);
+  // rightDrive.move(20);
+  // pros::delay(1400);
+  // leftDrive.move(20);
+  // rightDrive.move(20);
+  // intake_motor.move(-100);
+  // intake_motor2.move(-100);
+  // pros::delay(2000);
+  //
+  // leftDrive.move(0);
+  // rightDrive.move(0);
+  // intake_motor.move(0);
+  // intake_motor2.move(0);
+  // timedTurn(25, 500);
+  // timedDrive(30, 2000);
+  // timedTurn(-30, 1400);
+  // togglePiston();
+  // intake_motor.move(-100);
+  // intake_motor2.move(-100);
+  // intake_motor3.move(100);
+  // pros::delay(3000);
+  // piston1.set_value(false);
+  //
   // 2. Slow down AND run intake SIMULTANEOUSLY for 1 second (timed)
   // pros::lcd::print(0, "Grabbing ball");
   // intake_motor.move(20);   // Intake on
