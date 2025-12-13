@@ -349,6 +349,8 @@ void timedTurn(int power, int milliseconds) {
   leftDrive.move(0);
   rightDrive.move(0);
 }
+
+void togglePiston() { piston1.toggle(); }
 // Add this to the END of autonomous.cpp
 void myAutonomous() {
   timedTurn(-26, 882);
@@ -371,6 +373,7 @@ void myAutonomous() {
   timedTurn(25, 500);
   timedDrive(30, 2000);
   timedTurn(-30, 1400);
+  togglePiston();
 
   // 2. Slow down AND run intake SIMULTANEOUSLY for 1 second (timed)
   // pros::lcd::print(0, "Grabbing ball");

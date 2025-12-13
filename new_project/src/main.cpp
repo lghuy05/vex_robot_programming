@@ -70,7 +70,10 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() { myAutonomous(); }
+void autonomous() {
+  piston1.set_value(false);
+  myAutonomous();
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task
