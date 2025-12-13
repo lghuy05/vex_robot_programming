@@ -359,31 +359,31 @@ void intake_run() {
 }
 
 void myAutonomous() {
-  timedTurn(-26, 882);
-  timedDrive(33, 3700);
-  timedTurn(30, 1600);
-
-  leftDrive.move(20);
-  rightDrive.move(20);
-  pros::delay(1400);
-  leftDrive.move(20);
-  rightDrive.move(20);
-  intake_motor.move(-100);
-  intake_motor2.move(-100);
-  pros::delay(2000);
+  // timedTurn(-26, 882);
+  // timedDrive(33, 3700);
+  // timedTurn(30, 1600);
   //
-  // leftDrive.move(0);
-  // rightDrive.move(0);
-  // intake_motor.move(0);
-  // intake_motor2.move(0);
-  timedTurn(25, 600);
-  timedDrive(30, 2000);
-  timedTurn(-30, 1700);
-  timedDrive(20, 500);
-  togglePiston();
-  intake_run();
-  pros::delay(3000);
-  piston1.set_value(false);
+  // leftDrive.move(20);
+  // rightDrive.move(20);
+  // pros::delay(1400);
+  // leftDrive.move(20);
+  // rightDrive.move(20);
+  // intake_motor.move(-100);
+  // intake_motor2.move(-100);
+  // pros::delay(2000);
+  // //
+  // // leftDrive.move(0);
+  // // rightDrive.move(0);
+  // // intake_motor.move(0);
+  // // intake_motor2.move(0);
+  // timedTurn(25, 600);
+  // timedDrive(30, 2000);
+  // timedTurn(-30, 1700);
+  // timedDrive(20, 500);
+  // togglePiston();
+  // intake_run();
+  // pros::delay(3000);
+  // piston1.set_value(false);
 
   // reversed
 
