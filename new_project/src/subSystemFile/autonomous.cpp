@@ -372,7 +372,8 @@ void myAutonomous() {
   // intake_motor2.move(0);
   timedTurn(25, 500);
   timedDrive(30, 2100);
-  timedTurn(-30, 1500);
+  timedTurn(-30, 1700);
+  timedDrive(10, 1000);
   togglePiston();
   intake_motor.move(-100);
   intake_motor2.move(-100);
