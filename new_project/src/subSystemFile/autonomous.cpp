@@ -374,9 +374,7 @@ void myAutonomous() {
   timedDrive(30, 2000);
   timedTurn(-30, 1700);
   timedDrive(10, 1000);
-  pros::delay(1000);
   togglePiston();
-  pros::delay(1000);
   intake_motor.move(-100);
   intake_motor2.move(-100);
   intake_motor3.move(100);
