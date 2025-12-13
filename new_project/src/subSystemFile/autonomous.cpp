@@ -351,7 +351,13 @@ void timedTurn(int power, int milliseconds) {
 }
 
 void togglePiston() { piston1.toggle(); }
-// Add this to the END of autonomous.cpp
+
+void intake_run() {
+  intake_motor.move(-100);
+  intake_motor2.move(-100);
+  intake_motor3.move(100);
+}
+
 void myAutonomous() {
   timedTurn(-26, 882);
   timedDrive(33, 3700);
@@ -370,14 +376,12 @@ void myAutonomous() {
   // rightDrive.move(0);
   // intake_motor.move(0);
   // intake_motor2.move(0);
-  timedTurn(25, 500);
+  timedTurn(25, 600);
   timedDrive(30, 2000);
   timedTurn(-30, 1700);
-  timedDrive(10, 1000);
+  timedDrive(20, 500);
   togglePiston();
-  intake_motor.move(-100);
-  intake_motor2.move(-100);
-  intake_motor3.move(100);
+  intake_run();
   pros::delay(3000);
   piston1.set_value(false);
   //
